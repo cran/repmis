@@ -1,0 +1,12 @@
+89b9b83e16910c61f90949cfa09f650b *DESCRIPTION
+d872b4ea5be679c7cee775961c00ca60 *NAMESPACE
+fb2c716499b0a5ce8df0bc572ae390b9 *NEWS
+d478ba365374845abe9b12e4325e7639 *R/InstallOldPackages.R
+5a221ef82c07bb3046c36524df695d63 *R/LoadandCite.R
+d804541fe29316327897ab1d3571e494 *R/source_GitHubData.R
+567fb5f4afcea4b221e77a2483ed6a2a *R/source_data.R
+c0649e640d3966f67f92b8c849306a4a *README.md
+26618faf6cf6871edd7245cd13e7bd71 *man/InstallOldPackages.Rd
+45e803f4b582bb4008790c5bf78bc812 *man/LoadandCite.Rd
+3eb0e895f8d79fcead978857db91afc0 *man/source_GitHubData.Rd
+068bf2cb56e04121393544e7589a7c06 *man/source_data.Rd

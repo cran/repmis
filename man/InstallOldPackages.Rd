@@ -3,7 +3,7 @@
 \title{Install old versions of R packages.}
 \usage{
   InstallOldPackages(pkgs, versions,
-    oldRepos = "http://cran.r-project.org", ...)
+    oldRepos = "http://cran.r-project.org", lib = NULL)
 }
 \arguments{
   \item{pkgs}{character vector of package names to
@@ -17,7 +17,10 @@
   the packages old package versions from. Default is
   \code{oldRepos = "http://cran.r-project.org"}.}
 
-  \item{...}{other arguments passed to specific methods.}
+  \item{lib}{character vector giving the library
+  directories where to install the packages. Recycled as
+  needed. If \code{NULL}, defaults to the first element of
+  \code{.libPaths()}.}
 }
 \description{
   \code{InstallOldPackages} installs specific R package
@@ -27,7 +30,7 @@
   Installs specific R package versions.
 }
 \examples{
-# Not Run
+# dontrun
 # Install old versions of the e1071 and gtools packages.
 # Used R version 2.15.3
 # Names <- c("e1071", "gtools")

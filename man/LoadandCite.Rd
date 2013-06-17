@@ -3,11 +3,15 @@
 \title{Install, load, and cite R packages}
 \source{
   This function is partially based on:
-  <https://gist.github.com/3710171>.
+  <https://gist.github.com/3710171>. It also borrows code
+  from knitr's \code{write_bib}. See: Y. Xie. knitr: A
+  general-purpose package for dynamic report generation in
+  R, 2013. URL http://CRAN.R-project. org/package=knitr. R
+  package version 1.2.
 }
 \usage{
   LoadandCite(pkgs, versions = NULL, install = FALSE,
-    file = "", repos = NULL, lib, ...)
+    file = NULL, repos = NULL, lib = NULL)
 }
 \arguments{
   \item{pkgs}{a character vector of R package names.}
@@ -21,7 +25,9 @@
   install the packages. The default is \code{install =
   FALSE}.}
 
-  \item{file}{the name of the BibTeX file.}
+  \item{file}{the name of the BibTeX file you want to
+  create. If \code{file = NULL} then the packages are
+  loaded, but no BibTeX file is created.}
 
   \item{repos}{character vector specifying which repository
   to download packages from. Only relevant if \code{install
@@ -32,11 +38,9 @@
 
   \item{lib}{character vector giving the library
   directories where to install the packages. Recycled as
-  needed. If missing, defaults to the first element of
+  needed. If \code{NULL}, defaults to the first element of
   \code{.libPaths()}. Only relevant if \code{install =
   TRUE}.}
-
-  \item{...}{other arguments passed to specific methods.}
 }
 \description{
   \code{LoadandCite} can install and load R packages as
@@ -47,14 +51,14 @@
   The command can install R packages, load them, and create
   a BibTeX file that can be used to cite the packages in a
   LaTeX or similar document. It can be useful to place this
-  command in a \code{\link{knitr}} code chunk at the
-  beginning of a reproducible research document. Note: the
-  command will overwrite existing files with the same name
-  as \code{file}, so it is generally a good idea to create
-  a new BibTeX file with \code{LoadandCite}.
+  command in a \code{knitr} code chunk at the beginning of
+  a reproducible research document. Note: the command will
+  overwrite existing files with the same name as
+  \code{file}, so it is generally a good idea to create a
+  new BibTeX file with \code{LoadandCite}.
 }
 \examples{
-# Not Run
+# dont
 # Create vector of package names
 ## In this example you need to have the packages installed aready.
 # PackNames <- c("knitr", "ggplot2")
@@ -66,7 +70,7 @@
 # LoadandCite(pkgs = Names, versions = Vers, install = TRUE, file = "PackageCites.bib")
 }
 \seealso{
-  \link{knitr}, \code{\link{write_bib}},
-  \code{\link{install.packages}}, and \code{\link{library}}
+  \code{write_bib}, \code{\link{install.packages}}, and
+  \code{\link{library}}
 }
 

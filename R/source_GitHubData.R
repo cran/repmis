@@ -15,15 +15,19 @@
 #' @examples
 #' # Download electoral disproportionality data stored on GitHub
 #' # Note: Using shortened URL created by bitly
+#' \dontrun{
 #' DisData <- source_GitHubData("http://bit.ly/Ss6zDO")
+#' }
 #' @source Based on source_url from the Hadley Wickham's devtools package.
 #' @seealso \link{httr} and \code{\link{read.table}}
 #' @importFrom digest digest
 #' @importFrom httr GET stop_for_status text_content
-#' @export
+#' @keywords depricated
+#' @noRd
 
 source_GitHubData <-function(url, sha1 = NULL, sep = ",", header = TRUE, ...)
 {
+  warning('source_GitHubData is depricated. Use source_data instead.')
     stopifnot(is.character(url), length(url) == 1)
     
     temp_file <- tempfile()

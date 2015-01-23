@@ -1,11 +1,11 @@
 repmis
 ===
 
-### Version 0.3.3 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
+### Version 0.4 [![Build Status](https://travis-ci.org/christophergandrud/repmis.png)](https://travis-ci.org/christophergandrud/repmis)
 
 ### Christopher Gandrud
 
-> A collection of miscellaneous tools for reproducible research with R.
+> Miscellaneous tools for reproducible research with R.
 
 ## Functions
 

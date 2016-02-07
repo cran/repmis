@@ -2,11 +2,11 @@ Package: repmis
 Type: Package
 Title: Miscellaneous Tools for Reproducible Research
 Description: Tools to load 'R' packages
-    and automatically generate BibTeX files citing them as well as load
-    plain-text and 'Excel' formatted data stored on 'Dropbox', 'GitHub', and
+    and automatically generate BibTeX files citing them as well as load and
+    cache plain-text and 'Excel' formatted data stored on 'GitHub', and
     from other sources.
-Version: 0.4.4
-Date: 2015-06-03
+Version: 0.5
+Date: 2016-02-06
 Authors@R: c(
     person("Christopher", "Gandrud", email = "christopher.gandrud@gmail.com",
     role = c("aut", "cre"))
@@ -17,9 +17,10 @@ URL: http://cran.r-project.org/package=repmis
 BugReports: https://github.com/christophergandrud/repmis/issues
 Imports: data.table, digest, httr, plyr, R.cache
 Suggests: xlsx
+RoxygenNote: 5.0.1
 NeedsCompilation: no
-Packaged: 2015-06-03 07:47:46 UTC; christophergandrud
+Packaged: 2016-02-06 19:46:42 UTC; christophergandrud
 Author: Christopher Gandrud [aut, cre]
 Maintainer: Christopher Gandrud <christopher.gandrud@gmail.com>
 Repository: CRAN
-Date/Publication: 2015-06-03 12:22:19
+Date/Publication: 2016-02-07 09:16:30

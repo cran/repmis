@@ -8,9 +8,18 @@ Originally based on source_url from the Hadley Wickham's devtools
 package.
 }
 \usage{
-source_data(url, rdata, sha1 = NULL, cache = FALSE, clearCache = FALSE,
-  sep = "auto", header = "auto", stringsAsFactors = FALSE,
-  envir = parent.frame(), ...)
+source_data(
+  url,
+  rdata,
+  sha1 = NULL,
+  cache = FALSE,
+  clearCache = FALSE,
+  sep = "auto",
+  header = "auto",
+  stringsAsFactors = FALSE,
+  envir = parent.frame(),
+  ...
+)
 }
 \arguments{
 \item{url}{The data's URL. To distinguish between plain-text and RDATA the
@@ -42,7 +51,7 @@ header (i.e. variable names).}
 
 \item{envir}{the environment where the data should be loaded.}
 
-\item{...}{additional arguments passed to \code{\link{fread}} or
+\item{...}{additional arguments passed to \code{\link[data.table]{fread}} or
 \code{\link{load}} as relevant.}
 }
 \value{
@@ -78,6 +87,5 @@ DisDataHash <- source_data("http://bit.ly/Ss6zDO",
 }
 }
 \seealso{
-\link{httr}, \code{\link{fread}}, and \code{\link{load}}
+\code{\link[httr]{GET}}, \code{\link[data.table]{fread}}, and \code{\link{load}}
 }
-

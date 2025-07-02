@@ -16,7 +16,7 @@
 #'
 #' @return a data frame
 #'
-#' @seealso \code{read.xlsx}, \link{httr}, \code{\link{source_data}}
+#' @seealso \code{read.xlsx}, \code{\link[httr]{GET}}, \code{\link{source_data}}
 #'
 #' @export
 
@@ -66,10 +66,10 @@ source_XlsxData <- function(url, sheet, sha1 = NULL, cache = FALSE,
         }
         fullData <- download_data_intern(url = url, sha1 = sha1,
                                         temp_file = temp_file)
-        if (class(sheet) == 'character'){
+        if (inherits(sheet, 'character')){
             data <- xlsx::read.xlsx(fullData, sheetName = sheet, ...)
         }
-        else if (class(sheet) != 'character'){
+        else if (!inherits(sheet, 'character')){
             data <- xlsx::read.xlsx(fullData, sheetIndex = sheet, ...)
         }
         saveCache(data, key = key)
@@ -78,10 +78,10 @@ source_XlsxData <- function(url, sheet, sha1 = NULL, cache = FALSE,
     else if (!isTRUE(cache)){
         fullData <- download_data_intern(url = url, sha1 = sha1,
                                         temp_file = temp_file)
-        if (class(sheet) == 'character'){
+        if (inherits(sheet, 'character')){
             data <- xlsx::read.xlsx(fullData, sheetName = sheet, ...)
         }
-        else if (class(sheet) != 'character'){
+        else if (!inherits(sheet, 'character')){
             data <- xlsx::read.xlsx(fullData, sheetIndex = sheet, ...)
         }
         return(data)

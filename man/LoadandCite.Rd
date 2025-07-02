@@ -9,15 +9,24 @@ Research Documents. SSRN.
 This function is partially based on: \url{https://gist.github.com/3710171}.
 It also builds on code from knitr's \code{write_bib}. See: Y. Xie. knitr: A
 general-purpose package for dynamic report generation in R, 2013. URL
-\url{http://CRAN.R-project.org/package=knitr}. R package version 1.5. Note
+\url{https://CRAN.R-project.org/package=knitr}. R package version 1.5. Note
 that it does not formally depend on knitr so that knitr can be included in
 \code{LoadandCite} so that it is possible to install old versions of that
 package.
 }
 \usage{
-LoadandCite(pkgs = NULL, versions = NULL, Rversion = NULL,
-  bibtex = TRUE, style = "plain", tweak = TRUE, install = FALSE,
-  file = NULL, repos = NULL, lib = NULL)
+LoadandCite(
+  pkgs = NULL,
+  versions = NULL,
+  Rversion = NULL,
+  bibtex = TRUE,
+  style = "plain",
+  tweak = TRUE,
+  install = FALSE,
+  file = NULL,
+  repos = NULL,
+  lib = NULL
+)
 }
 \arguments{
 \item{pkgs}{a character vector of R package names. If \code{pkgs = NULL} then
@@ -40,7 +49,7 @@ is created. If \code{FALSE} than the citations are returned as plain text.}
 citations. Currently supports \code{'plain'}, i.e. no special formatting and
 \code{'JSS'} to match the BibTeX style for the
 \emph{Journal of Statistical Software}
-(see \url{http://www.jstatsoft.org/style}).}
+(see \url{https://www.jstatsoft.org/style}).}
 
 \item{tweak}{logical. Whether to fix some known problems in the citations,
 especially non-standard format of authors.}
@@ -75,11 +84,13 @@ overwrite existing files with the same name as \code{file}, so it is
 generally a good idea to create a new BibTeX file with \code{LoadandCite}.
 }
 \examples{
+\dontrun{
 # Create vector of package names
 ## In this example you need to have the packages installed aready.
 PackNames <- "repmis"
 # Load the packages and create a BibTeX file
 LoadandCite(pkgs = PackNames, file = 'PackageCites.bib', style = 'JSS')
+}
 \dontrun{
 # Install, load, and cite specific package versions
 # dontrun due to CRAN restrictions
@@ -93,4 +104,3 @@ LoadandCite(pkgs = Names, versions = Vers, install = TRUE,
 \code{write_bib}, \code{\link{install.packages}}, and
 \code{\link{library}}
 }
-
